@@ -1,26 +1,20 @@
-from fbchat import Client
-from fbchat.models import Message, ThreadType
-import json
+const login = require("facebook-chat-api");
+const fs = require("fs");
 
-with open('fbstate.json', 'r') as f:
-    fbstate_data = json.load(f)
+const appState = require("./fbstate.json");
+const botConfig = require("./bot.json");
 
-class EchoBot(Client):
-    def onMessage(self, author_id, message_object, thread_id, thread_type, **kwargs):
-        msg = message_object.text.lower()
-        if author_id == self.uid:
-            return
+login({ appState }, (err, api) => {
+    if (err) return console.error(err);
 
-        print(f"Received: {msg} from {thread_id}")
+    api.listenMqtt((err, message) => {
+        if (err) return console.error(err);
 
-        if thread_type == ThreadType.GROUP:
-            if any(word in msg for word in ["hi", "bot", "help"]):
-                self.send(
-                    Message(text="✅ Hello! I'm a test bot."),
-                    thread_id=thread_id,
-                    thread_type=thread_type
-                )
-
-bot = EchoBot("", "", session_cookies=fbstate_data)
-print("🤖 Bot is running...")
-bot.listen()
+        for (const item of botConfig.responses) {
+            if (message.body.toLowerCase().includes(item.trigger.toLowerCase())) {
+                api.sendMessage(item.reply, message.threadID);
+                break;
+            }
+        }
+    });
+});
