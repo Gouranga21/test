@@ -1,14 +1,14 @@
-{
-  "c_user": "61569422105732",
-  "xs": "34:sJ2E3ScxURZOTw:2:1750089060:-1:-1",
-  "fr": "0FXxMinZA1SFkItes.AWdfFB2Z5Mx7W138Gi92GRMjlj58YXUgjIqIlUoHAtgYcVW2L9Y.BoUAAS..AAA.0.0.BoUO3r.AWdWYkwQa3cNllrxoyWIzkaCZ4s",
-  "datr": "EQBQaGyKwTco_VZU9hUOQlrK",
-  "sb": "EgBQaHUIrkMsyRa2Luw6QD1p",
-  "dbln": "{\"61569422105732\":\"DAVxGTrB\"}",
-  "locale": "en_GB",
-  "vpd": "v1;816x400x2.700000047683716",
-  "ps_l": "1",
-  "ps_n": "1",
-  "fbl_st": "101326299;T:29168904",
-  "wl_cbv": "v2;client_version:2846;timestamp:1750134252"
-}
+[
+  {
+    "key": "c_user",
+    "value": "61569422105732",
+    "domain": "facebook.com",
+    "path": "/"
+  },
+  {
+    "key": "xs",
+    "value": "34%3AsJ2E3ScxURZOTw%3A2%3A1750089060%3A-1%3A-1",
+    "domain": "facebook.com",
+    "path": "/"
+  }
+]
