@@ -1,0 +1,7 @@
+{
+  "responses": [
+    { "trigger": "hello", "reply": "Hi there!" },
+    { "trigger": "ping", "reply": "pong" },
+    { "trigger": "bye", "reply": "Goodbye!" }
+  ]
+}
